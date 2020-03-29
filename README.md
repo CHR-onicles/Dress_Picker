@@ -7,4 +7,4 @@ I also know its not much but hey, this is legit a program I need that addressed 
 Usage:
 Basically enter the number of tops/pants you want
 Then enter the names of the attires using underscore as space
-Then wait for the magic...the dress is picked at random
+Then wait for the magic...a suggested dress is picked and at random
