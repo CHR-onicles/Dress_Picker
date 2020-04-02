@@ -69,7 +69,3 @@ int main() {
 	system("pause");
 	return 0;
 }
-
-/*		ISSUES:
-* 1. Try to allow users to enter dresses with spaces (problem with getline - removes first character of input)
-*/
