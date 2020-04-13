@@ -1,14 +1,18 @@
-//Author: CHR-onicles
-//Time: 29/03/2020 20:00 GMT
-//Version 1.0
+/********************************
+*Author: CHR-onicles
+*Date/Time: 29/03/2020, 20:00 GMT
+*Version 2.0 13/04/2020
+********************************/
 
 #include <iostream>
 #include <vector>
 #include <ctime>
 #include <cstring>
+#include <string>
+#include <limits>
 using namespace std;
 
-void car_pants(vector<string>& tops, vector<string>& pants, int& tops_num, int& pants_num) {
+void picker(vector<string>& tops, vector<string>& pants, int& tops_num, int& pants_num) {
 	srand(time(0));
 	unsigned int r = rand() % tops_num;
 	unsigned int s = rand() % pants_num;
@@ -17,9 +21,9 @@ void car_pants(vector<string>& tops, vector<string>& pants, int& tops_num, int& 
 }
 
 int main() {
-	cout << "Welcome to the program to help you decide on what to wear...\nbecause apparently you have better things doing..." << endl;
-	cout << "NB: all input should NOT contain spaces, underscores'_' only!" << endl;
-	cout << "*************************************************************" << endl;
+	cout << "Welcome to the program that helps you decide on what to wear..." << endl;
+	cout << "because apparently you have better things doing... :)" << endl;
+	cout << "***************************************************************" << endl;
 
 	vector<string> tops;
 	cout << "How many tops do you want to input?: ";
@@ -27,10 +31,11 @@ int main() {
 	cin >> tops_num;
 
 	if (tops_num > 0) {
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
 		for (size_t i{ 1 }; i <= tops_num; ++i) {
 			string temp;
 			cout << "Enter the name of shirt[" << i << "]: ";
-			cin >> temp;
+			getline(cin, temp);
 			tops.push_back(temp);
 		}
 
@@ -40,10 +45,11 @@ int main() {
 		cin >> pants_num;	
 
 		if (pants_num > 0) {
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
 			for (size_t i{ 1 }; i <= pants_num; ++i) {
 				cout << "Enter the name of pant[" << i << "]: ";
 				string temp;
-				cin >> temp;
+				getline(cin, temp);
 				pants.push_back(temp);
 
 			}
@@ -51,7 +57,7 @@ int main() {
 			char response{};
 
 			do {
-				car_pants(tops, pants, tops_num, pants_num);
+				picker(tops, pants, tops_num, pants_num);
 				cout << "Are you satisfied with your result? [Y/N]: ";
 				cin >> response;
 				response = toupper(response);

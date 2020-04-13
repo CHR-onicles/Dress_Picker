@@ -6,5 +6,13 @@ I also know its not much but hey, this is legit a program I need that addressed 
 
 Usage:
 Basically enter the number of tops/pants you want
-Then enter the names of the attires using underscore as space
-Then wait for the magic...a suggested dress is picked and at random
+Enter the names of the attires
+Then wait for the magic...a suggested dress is picked, and at random
+
+==>Possible Update:
+-Add footwear, and other accessories
+
+
+***********
+Update Log:
+v2.0: Names of dresses can be entered now with spaces; no need for underscores
