@@ -11,6 +11,7 @@
 #include <string>
 #include <limits>
 #include <sstream>
+#include <conio.h>
 using namespace std;
 
 void picker(vector<string>& tops, vector<string>& pants, int& tops_num, int& pants_num) {
@@ -98,12 +99,11 @@ int main() {
 	do {
 		picker(tops, pants, tops_num, pants_num);
 		cout << "Are you satisfied with your result? [Y/N]: ";
-		cin >> response;
+		response = _getch();
 		response = toupper(response);
 
 	} while (response != 'Y');
 	cout << "\nExcellent choice!" << endl;
-
 	
 	cout << "\nGoodbye!" << endl;
 	system("pause");
