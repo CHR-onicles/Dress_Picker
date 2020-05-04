@@ -13,11 +13,16 @@
 using namespace std;
 
 void picker(vector<string>& tops, vector<string>& pants, int& tops_num, int& pants_num) {
-	srand(time(0));
+	srand(time(NULL));
 	unsigned int r = rand() % tops_num;
 	unsigned int s = rand() % pants_num;
 
 	cout << "\n===> You are wearing the " << tops.at(r) << " with the " << pants.at(s) << " today! <===" << endl;
+}
+
+void clearandIgnore() {
+	cin.clear();
+	cin.ignore(numeric_limits<streamsize>::max(), '\n');
 }
 
 int main() {
@@ -31,7 +36,7 @@ int main() {
 	cin >> tops_num;
 
 	if (tops_num > 0) {
-		cin.ignore(numeric_limits<streamsize>::max(), '\n');
+		clearandIgnore();
 		for (size_t i{ 1 }; i <= tops_num; ++i) {
 			string temp;
 			cout << "Enter the name of shirt[" << i << "]: ";
@@ -45,7 +50,7 @@ int main() {
 		cin >> pants_num;	
 
 		if (pants_num > 0) {
-			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			clearandIgnore();
 			for (size_t i{ 1 }; i <= pants_num; ++i) {
 				cout << "Enter the name of pant[" << i << "]: ";
 				string temp;

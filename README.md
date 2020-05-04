@@ -11,6 +11,7 @@ Then wait for the magic...a suggested dress is picked, and at random
 
 ==>Possible Update:
 -Add footwear, and other accessories
+-User Validation for entries made
 
 
 ***********
