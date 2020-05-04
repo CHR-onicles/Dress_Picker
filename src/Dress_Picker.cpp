@@ -10,6 +10,7 @@
 #include <cstring>
 #include <string>
 #include <limits>
+#include <sstream>
 using namespace std;
 
 void picker(vector<string>& tops, vector<string>& pants, int& tops_num, int& pants_num) {
@@ -20,10 +21,10 @@ void picker(vector<string>& tops, vector<string>& pants, int& tops_num, int& pan
 	cout << "\n===> You are wearing the " << tops.at(r) << " with the " << pants.at(s) << " today! <===" << endl;
 }
 
-void clearandIgnore() {
-	cin.clear();
-	cin.ignore(numeric_limits<streamsize>::max(), '\n');
-}
+ inline void clearandIgnore() {
+	cin.clear();	//reset input error flags
+	cin.ignore(numeric_limits<streamsize>::max(), '\n');	//ignore garbage in buffer from last input
+ }
 
 int main() {
 	cout << "Welcome to the program that helps you decide on what to wear..." << endl;
@@ -31,11 +32,28 @@ int main() {
 	cout << "***************************************************************" << endl;
 
 	vector<string> tops;
-	cout << "How many tops do you want to input?: ";
 	int tops_num;
-	cin >> tops_num;
+	string entry;
+	bool isValidNum = false;
+	do {
+		cout << "How many tops do you want to input?: ";
+		cin >> entry;
+		istringstream iss{ entry };
 
-	if (tops_num > 0) {
+		if (iss >> tops_num) {
+			iss >> tops_num;
+			if (tops_num > 0) isValidNum = true;
+			else {
+				cerr << "Number must be greater than zero!" << endl;
+				clearandIgnore();
+			} 
+		}
+		else {
+			cerr << "Invalid number value!" << endl;
+			clearandIgnore();
+		}
+	} while (!isValidNum);
+
 		clearandIgnore();
 		for (size_t i{ 1 }; i <= tops_num; ++i) {
 			string temp;
@@ -45,11 +63,27 @@ int main() {
 		}
 
 		vector <string> pants;
-		cout << "\nHow many pants do you want to input?: ";
+		isValidNum = false;
 		int pants_num;
-		cin >> pants_num;	
+		
+		do{
+			cout << "\nHow many pants do you want to input?: ";
+			cin >> entry;
+			istringstream iss{ entry };
+			if (iss >> pants_num) {
+				iss >> pants_num;
+				if (pants_num > 0) isValidNum = true;
+				else {
+					cerr << "Number must be greater than zero!" << endl;
+					clearandIgnore();
+				}
+			}
+			else {
+				cerr << "Invalid number value!" << endl;
+				clearandIgnore();
+			}
+		} while (!isValidNum);
 
-		if (pants_num > 0) {
 			clearandIgnore();
 			for (size_t i{ 1 }; i <= pants_num; ++i) {
 				cout << "Enter the name of pant[" << i << "]: ";
@@ -69,12 +103,7 @@ int main() {
 
 			} while (response != 'Y');
 			cout << "\nExcellent choice!" << endl;
-		}
-		else cerr << "Invalid value!" << endl;
-		
-	}
-	else cerr << "Invalid value!" << endl;
-	
+
 	
 	cout << "\nGoodbye!" << endl;
 	system("pause");

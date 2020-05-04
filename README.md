@@ -11,9 +11,10 @@ Then wait for the magic...a suggested dress is picked, and at random
 
 ==>Possible Update:
 -Add footwear, and other accessories
--User Validation for entries made
 
 
 ***********
 Update Log:
+v2.1: Program checks whether user inputs numbers where number of tops and pants are required
+
 v2.0: Names of dresses can be entered now with spaces; no need for underscores
