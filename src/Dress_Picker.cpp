@@ -1,7 +1,7 @@
 /********************************
 *Author: CHR-onicles
 *Date/Time: 29/03/2020, 20:00 GMT
-*Version 2.0 13/04/2020
+*Version 2.1 04/05/2020
 ********************************/
 
 #include <iostream>
@@ -54,55 +54,55 @@ int main() {
 		}
 	} while (!isValidNum);
 
-		clearandIgnore();
-		for (size_t i{ 1 }; i <= tops_num; ++i) {
+	clearandIgnore();
+	for (size_t i{ 1 }; i <= tops_num; ++i) {
 			string temp;
 			cout << "Enter the name of shirt[" << i << "]: ";
 			getline(cin, temp);
 			tops.push_back(temp);
-		}
+	}
 
-		vector <string> pants;
-		isValidNum = false;
-		int pants_num;
+	vector <string> pants;
+	isValidNum = false;
+	int pants_num;
 		
-		do{
-			cout << "\nHow many pants do you want to input?: ";
-			cin >> entry;
-			istringstream iss{ entry };
-			if (iss >> pants_num) {
-				iss >> pants_num;
-				if (pants_num > 0) isValidNum = true;
-				else {
-					cerr << "Number must be greater than zero!" << endl;
-					clearandIgnore();
-				}
-			}
+	do{
+		cout << "\nHow many pants do you want to input?: ";
+		cin >> entry;
+		istringstream iss{ entry };
+		if (iss >> pants_num) {
+			iss >> pants_num;
+			if (pants_num > 0) isValidNum = true;
 			else {
-				cerr << "Invalid number value!" << endl;
+				cerr << "Number must be greater than zero!" << endl;
 				clearandIgnore();
 			}
-		} while (!isValidNum);
-
+		}
+		else {
+			cerr << "Invalid number value!" << endl;
 			clearandIgnore();
-			for (size_t i{ 1 }; i <= pants_num; ++i) {
-				cout << "Enter the name of pant[" << i << "]: ";
-				string temp;
-				getline(cin, temp);
-				pants.push_back(temp);
+		}
+	} while (!isValidNum);
 
-			}
+	clearandIgnore();
+	for (size_t i{ 1 }; i <= pants_num; ++i) {
+		cout << "Enter the name of pant[" << i << "]: ";
+		string temp;
+		getline(cin, temp);
+		pants.push_back(temp);
 
-			char response{};
+	}
 
-			do {
-				picker(tops, pants, tops_num, pants_num);
-				cout << "Are you satisfied with your result? [Y/N]: ";
-				cin >> response;
-				response = toupper(response);
+	char response{};
 
-			} while (response != 'Y');
-			cout << "\nExcellent choice!" << endl;
+	do {
+		picker(tops, pants, tops_num, pants_num);
+		cout << "Are you satisfied with your result? [Y/N]: ";
+		cin >> response;
+		response = toupper(response);
+
+	} while (response != 'Y');
+	cout << "\nExcellent choice!" << endl;
 
 	
 	cout << "\nGoodbye!" << endl;
