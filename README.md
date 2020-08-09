@@ -1,8 +1,8 @@
 # THE_DRESS_PICKER_PROGRAM
 
 Yes, yes I know... dress picker program and you see... I have this problem where I hate picking dresses to wear
-I feel its such a trivial task and takes too much of my brainpower...It was on this premise i wrote this program.
-I also know its not much but hey, this is legit a program I need that addressed a problem I had so yh suck on that haters ;)
+I feel its such a trivial task and takes too much of my brainpower...It was on this premise I wrote this program.
+I also know its not much but hey, this is legit a program I need that addressed a problem I had so yh...
 
 ## Usage:
 - Basically enter the number of tops/pants you want
