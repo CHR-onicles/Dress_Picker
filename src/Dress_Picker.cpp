@@ -14,7 +14,7 @@
 #include <conio.h>
 using namespace std;
 
-void picker(vector<string>& tops, vector<string>& pants, int& tops_num, int& pants_num) {
+inline void picker(vector<string>& tops, vector<string>& pants, int& tops_num, int& pants_num) {
 	srand(time(NULL));
 	unsigned int r = rand() % tops_num;
 	unsigned int s = rand() % pants_num;
@@ -22,7 +22,7 @@ void picker(vector<string>& tops, vector<string>& pants, int& tops_num, int& pan
 	cout << "\n===> You are wearing the " << tops.at(r) << " with the " << pants.at(s) << " today! <===" << endl;
 }
 
- inline void clearandIgnore() {
+ inline void clearandIgnore() { //inline to replace function call with code for efficiency
 	cin.clear();	//reset input error flags
 	cin.ignore(numeric_limits<streamsize>::max(), '\n');	//ignore garbage in buffer from last input
  }
